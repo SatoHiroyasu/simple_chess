@@ -1,0 +1,22 @@
+.board-wrapper{
+    display: flex;
+    flex-flow: column;
+    margin: 0 auto;
+    width: max-content;
+    height: max-content;
+    border: 10px solid #000;
+
+    .board-rank{
+        z-index: 0;
+        display: flex;
+        flex-flow: row;
+    }
+
+    .pieces-layer {
+        z-index: 1;
+        position: absolute;
+        display: flex;
+        width: 480px;
+        height: 480px;
+    }
+}

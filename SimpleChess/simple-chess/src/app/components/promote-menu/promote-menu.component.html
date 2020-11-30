@@ -1,0 +1,6 @@
+<div class="promote-menu-wrapper">
+    <div class="promote-button" [class]="dispClass" *ngFor="let disp of dispPieces"
+    (click)="promote(disp)">
+        {{ getDisplay(disp) }}
+    </div>
+</div>

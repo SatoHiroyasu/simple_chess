@@ -1,0 +1,10 @@
+<div class="board-wrapper" >
+    <div class="board-rank" *ngFor="let array of squaresNum">
+        <div class="board-square" *ngFor="let file of array; index as rank">
+            <square [checkNum]="file"></square>
+        </div>
+    </div>
+    <div class="pieces-layer">
+        <pieces *ngFor="let piece of pieces" [piece]="piece"></pieces>
+    </div>
+</div>

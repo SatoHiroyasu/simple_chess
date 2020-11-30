@@ -1,0 +1,17 @@
+.square-wrapper{
+    height: 60px;
+    width: 60px;
+
+    .square-content{
+        height: 100%;
+        width: 100%;
+    }
+
+    .black-square{
+        background-color: #885039;
+    }
+
+    .white-square{
+        background-color: #d8b280;
+    }
+}

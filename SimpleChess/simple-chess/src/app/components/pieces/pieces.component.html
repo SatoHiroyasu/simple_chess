@@ -1,0 +1,29 @@
+<div tabindex="0" class="pieces-wrapper" [id]="'pieces-wrapper' + piece.id"
+(focus)="focusedSwitch()" (blur)="focusedSwitch()"
+[style]="'left:' + pieceStyle.left + 'px;' + 'bottom:' + pieceStyle.bottom + 'px;'"
+*ngIf="!isTaken" [@pieceMove]="pieceMove">
+    <div class="piece-area" [ngClass]="{'check': check}" [@pieceTaken]="pieceTaken">
+        <div [ngClass]="displayClass">
+            {{ display }}
+        </div>
+    </div>
+    <div class="move-able-area" *ngIf="focused && isMyturn">
+        <div class="move-able" *ngFor="let mas of masStyles"
+        [style]="'left:' + mas.left + 'px;' + 'bottom:' + mas.bottom + 'px;'"
+        (click)="animateMovePiece(mas)">
+        </div>
+        <div *ngIf="piece.name == 'king'">
+            <div *ngFor="let cas of casNames">
+                <div class="move-able" *ngIf="casFlgs[cas] && !check"
+                [style]="'left:' + casStyles[cas].left + 'px;' + 'bottom:' + casStyles[cas].bottom + 'px;'"
+                (click)="castling(cas)">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div tabindex="0" class="promote-menu-area" [class]="piece.color + '-menu'" [id]="'promote-menu' + piece.id"
+    *ngIf="piece.name == 'pawn'" (blur)="promoteMenuDisable()" [style]="'left:' + promoteStyle.left + 'px;'">
+        <promote-menu *ngIf="promoteFocused"
+        [piece]="piece" (promoted)="promoted($event)"></promote-menu>
+    </div>
+</div>

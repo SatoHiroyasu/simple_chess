@@ -1,0 +1,33 @@
+.promote-menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 10;
+
+    .promote-button{
+        height: 60px;
+        width: 60px;
+        cursor: pointer;
+        background-color: #888;
+        // width: 100%;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+        // position: absolute;
+        -webkit-text-stroke-width: 2px;
+    }
+
+    .promote-button:hover {
+        background-color: #444;
+    }
+
+    .white-display {
+        color: white;
+        -webkit-text-stroke-color: black;
+    }
+
+    .black-display {
+        color: black;
+        -webkit-text-stroke-color: white;
+    }
+}
